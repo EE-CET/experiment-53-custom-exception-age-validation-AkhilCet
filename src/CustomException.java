@@ -13,7 +13,7 @@ public class CustomException {
       Scanner input = new Scanner(System.in);
       int age = input.nextInt();
       try {
-         if (age <= 18) {
+         if (age < 18) {
             throw new InvalidAgeException("Exception: Not eligible to vote");
          } else {
             System.out.println("Eligible to vote");
