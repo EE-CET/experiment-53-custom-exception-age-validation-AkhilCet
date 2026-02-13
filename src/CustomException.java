@@ -1,15 +1,29 @@
-import java.util.Scanner;
+import java.util.*;
 
-// TODO: Create class InvalidAgeException extends Exception
-// Create a constructor that accepts a message string and passes it to super(message)
+class InvalidAgeException extends Exception {
+   InvalidAgeException(String message) {
+      super(message);
+   }
+}
+
 
 public class CustomException {
-    
-    // TODO: Create a static method validate(int age) that throws InvalidAgeException
-    // Check if age < 18, throw new InvalidAgeException("Not eligible to vote")
-    // Else print "Eligible to vote"
+   public static void main(String[] args)
+   {
+      Scanner input = new Scanner(System.in);
+      int age = input.nextInt();
+      try {
+         if (age <= 18) {
+            throw new InvalidAgeException("Exception: Not eligible to vote");
+         } else {
+            System.out.println("Eligible to vote");
+         }
+      } 
+      catch (InvalidAgeException e) {
+         System.out.println(e.getMessage());
+      }
+      
 
-    
-        // TODO: Read age
-        
+      input.close();
+   }  
 }
